@@ -1,0 +1,28 @@
+.ocean,
+.uninfected,
+.infected {
+  margin-left: 3px;
+  margin-right: 3px;
+  width: 35px;
+  height: 40px;
+  border: 1px solid #000;
+  border-radius: 2px;
+}
+
+.ocean {
+  background-color: #3584ec;
+}
+
+.uninfected {
+  background-color: #50eb50;
+}
+
+.infected {
+  background-color: #e72b2b;
+}
+
+#start-map,
+#end-map {
+  display: flex;
+  flex-wrap: wrap;
+}
