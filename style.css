@@ -26,3 +26,9 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+.line {
+  width: 50%;
+  height: 1px;
+  background-color: #918b8b;
+}
