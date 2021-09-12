@@ -4,19 +4,18 @@ let pandemicEnd = "";
 let totalNum = 0;
 let infectedNum = 0;
 let perCent = 0;
-let idStartaMap = "#start-map";
+let idStartMap = "#start-map";
 let idEndMap = "#end-map";
 
-mapOut(startMapArray, idStartaMap);
-total();
+showMap(startMapArray, idStartMap);
 endMap();
 let endMapArray = pandemicEnd.split("");
-console.log(endMapArray);
-mapOut(endMapArray, idEndMap);
-infected();
+showMap(endMapArray, idEndMap);
+total(startMapArray);
+infected(endMapArray);
 parcentage();
 
-function mapOut(arrayMap, idTag) {
+function showMap(arrayMap, idTag) {
   let out = "";
   for (let i = 0; i < arrayMap.length; i++) {
     if (arrayMap[i] == "X") {
@@ -30,9 +29,9 @@ function mapOut(arrayMap, idTag) {
   document.querySelector(idTag).innerHTML = out;
 }
 
-function total() {
-  for (let i = 0; i < startMapArray.length; i++) {
-    if (startMapArray[i] != "X") {
+function total(mapArray) {
+  for (let i = 0; i < mapArray.length; i++) {
+    if (mapArray[i] != "X") {
       totalNum++;
     }
   }
@@ -56,9 +55,9 @@ function endMap() {
   pandemicEnd = pandemicLandMap.join("X");
 }
 
-function infected() {
-  for (let i = 0; i < endMapArray.length; i++) {
-    if (endMapArray[i] == 1) {
+function infected(mapArray) {
+  for (let i = 0; i < mapArray.length; i++) {
+    if (mapArray[i] == 1) {
       infectedNum++;
     }
   }
